@@ -1,4 +1,4 @@
-# Project Gene Connectivity
+# DiffuCpG
 ## 1. Introduction
 
 ![alt text](https://github.com/yay135/gene_connectivity/blob/master/methylation_imputation_arch.jpg?raw=true)
@@ -31,7 +31,7 @@ Codename:       bookworm
 
 ### 3.2 Clone the Current Project
 Run the following command to clone the project.  
-``git clone https://github.com/yay135/gene_connectivity.git``  
+``git clone https://github.com/yay135/DiffuCpG.git``  
 ### 3.4 Configure Environment
 Make sure you have the following software installed in your system:   
 Python 3.9+   
@@ -45,9 +45,8 @@ The methylation arrays downloaded are in the folder "raw", each file is a methyl
 
 ### 4.2 Generate sample
 Use script "generate_samples.py" to generate samples for training and testing.   
-The model can not directly read and impute a methylation array file. Instead, each methylation array is divided into windows, each window is 1kb (1000 base pairs) in length, and each training testing sample is generated from a window. Each sample contains at least 5 channels. the first 4 is the sequence one-hot encoding, the 5th is the methylation data. If a base pair location is not a CpG location, the methylation data value for it is "-1". If a CpG's methylation data is missing or waiting for imputaion, its value is also "-1". Other biological data can be added as extra channels.
+The model can not directly read and impute a methylation array file. Instead, each methylation array is divided into windows, each window is 1kb (1000 base pairs) in length, and each training testing sample is generated from a window. Each sample contains at least 5 channels. the first 4 is the sequence one-hot encoding, the 5th is the methylation data. If a base pair location is not a CpG location, the methylation data value for it is "-1". If a CpG's methylation data is missing or waiting for imputaion, its value is also "-1". Other biological data can be added as extra channels.   
 
-#### 4.2.1 Generate sample options
 '-d' or '--folder': specify raw data folder   
 '-i' or '--index' : which column in a raw file is the methylation array   
 '-t' or '--tol' : how many missing methylation value is tolerated   
@@ -59,9 +58,9 @@ The model can not directly read and impute a methylation array file. Instead, ea
 '-p' or '--output': samples output folder, default is "out"
 
 ### 4.3 Training script
-Use diffusion.py to train and test a DDPM model using the generated samples.
+Use diffusion.py to train and test a DDPM model using the generated samples  
 '-t' or '--train_folder' : the folder containing the training samples   
-'-f' or '--model_folder' : the model folder   
+'-f' or '--model_folder' : the model folder, will be created if it does not exist      
 '-w' or '--win_size' : window size of each sample, default is 1000   
 '-c' or '--channel': channel size of each sample   
 '-d' or '--cuda_device' : if you have multiple cuda gpus, select which gpu to use, default is 0   
