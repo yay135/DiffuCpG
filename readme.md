@@ -35,6 +35,7 @@ Run the following command to clone the project.
 ### 3.4 Configure Environment
 Make sure you have the following software installed in your system:   
 Python 3.9+   
+Pytorch 2.0.1+ 
 ### 3.4 Run Training and Testing
 ``python run.py``   
 The script will download necessary data and install dependencies automatically.   
