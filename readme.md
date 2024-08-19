@@ -1,7 +1,7 @@
 # DiffuCpG
 ## 1. Introduction
 
-![alt text](https://github.com/yay135/gene_connectivity/blob/master/methylation_imputation_arch.jpg?raw=true)
+![Arch figure](https://github.com/yay135/DiffuCpG/blob/master/methylation_imputation_arch.jpg?raw=true)
 
 In this study, we used a generative AI diffusion model to address missing methylation data. We trained the model with Whole-Genome Bisulfite Sequencing data from 26 acute myeloid leukemia samples and validated it with Reduced Representation Bisulfite Sequencing data from 93 myelodysplastic syndrome and 13 normal samples. Additional testing included data from the Illumina 450k methylation array and Single-Cell Reduced Representation Bisulfite Sequencing on HepG2 cells. Our model, DiffuCpG, outperformed previous methods by integrating a broader range of genomic features, utilizing both short- and long-range interactions without increasing input complexity. It demonstrated superior accuracy, scalability, and versatility across various tissues, diseases, and technologies, providing predictions in both binary and continuous methylation states.
 
