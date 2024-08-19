@@ -1,0 +1,7 @@
+pandas
+matplotlib
+einops
+scikit-learn
+seaborn
+biopython
+tqdm
