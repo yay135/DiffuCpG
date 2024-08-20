@@ -7,7 +7,7 @@ In this study, we used a generative AI diffusion model to address missing methyl
 
 In this repository, we deposit the code used to build the diffusion models along with necessary example datasets to train and test a diffusion model for methylation imputation purposes.
 
-## Docker builds of our best models are now available!
+## Docker Usage
 ### Install Docker
 Install Docker using the following link:  
 https://docs.docker.com/engine/install/  
