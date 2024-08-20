@@ -12,6 +12,7 @@ In this repository, we deposit the code used to build the diffusion models along
 Install Docker using the following link:  
 https://docs.docker.com/engine/install/  
 Recommended system specs: Debian 12 bookworm with 16GB RAM or more.  
+Make sure you have the latest Nvidia GPU driver installed and docker can access your Nvidia GPU.   
 ### Run the Models  
 ``docker pull yay135/diffucpg``   
 prepare your input data directory, use the following command to print a example input data directory   
