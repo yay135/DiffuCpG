@@ -15,6 +15,8 @@ Recommended system specs: Debian 12 bookworm with 16GB RAM or more.
 Make sure you have the latest Nvidia GPU driver installed and docker can access your Nvidia GPU.   
 ### Run the Models  
 ``docker pull yay135/diffucpg``   
+If you do not have a GPU enabled system, pull CPU only image   
+``docker pull yay135/diffucpg_cpu``   
 prepare your input data directory, use the following command to print a example input data directory   
 ``docker run --rm yay135/diffucpg -e true``   
 assume your data directory name is "input_data"   
