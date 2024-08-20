@@ -24,7 +24,7 @@ in unix or linux
 
 ### other docker options
 -d or --device : select which cuda device to run with, default is 0      
--m or --mingcpg : scan your methyl array, limit only imputing windows with at least m non-missing methyl values, default is 10   
+-m or --mingcpg : scan your methyl array, limit only imputing windows with at least m non-missing methyl values, default is m=10   
 -o or --overlap : set number of impute epochs, shift window locations between epochs, get mean imputed values for each CpG location, default is 2   
 example:   
 ``docker run --gpus all -v ./input_data:/data --rm yay135/diffucpg -d 1 -m 5 -o 3``   
