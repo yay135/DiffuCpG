@@ -13,8 +13,22 @@ Install Docker using the following link:
 https://docs.docker.com/engine/install/  
 Recommended system specs: Debian 12 bookworm with 16GB RAM or more.  
 ### Run the Models  
+``docker pull yay135/diffucpg``   
+prepare your input data directory, use the following command to print a example input data directory   
+``docker run --rm yay135/diffucpg -e true``   
+assume your data directory name is "input_data"   
+in windows   
+``docker run --gpus all -v .\input_data\:/data --rm yay135/diffucpg``  
+in unix or linux
+``docker run --gpus all -v ./input_data:/data --rm yay135/diffucpg``  
 
-### Important Info
+### other docker options
+-d or --device : select which cuda device to run with, default is 0      
+-m or --mingcpg : scan your methyl array, limit only imputing windows with at least m non-missing methyl values, default is 10   
+-o or --overlap : set number of impute epochs, shift window locations between epochs, get mean imputed values for each CpG location, default is 2   
+example:   
+``docker run --gpus all -v ./input_data:/data --rm yay135/diffucpg -d 1 -m 5 -o 3``   
+use cuda device 1, min number of non-missing methyl values in a window is 5, overlap epochs 3
 
 **The following tutorials are for non-docker usages.**
 
