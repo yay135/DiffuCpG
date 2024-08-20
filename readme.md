@@ -19,7 +19,7 @@ prepare your input data directory, use the following command to print a example 
 assume your data directory name is "input_data"   
 in windows   
 ``docker run --gpus all -v .\input_data\:/data --rm yay135/diffucpg``  
-in unix or linux
+in unix or linux   
 ``docker run --gpus all -v ./input_data:/data --rm yay135/diffucpg``  
 
 ### other docker options
