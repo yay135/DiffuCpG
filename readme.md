@@ -57,13 +57,17 @@ Pytorch 2.0.1+
 ``python run.py``   
 The script will download necessary data and install dependencies automatically.   
 
-## 4 Data ans script Details
+## 4 Data and Script Details
 ### 4.1 RAW Data
 The methylation arrays downloaded are in the folder "raw", each file is a methylation array. The first 2 columns are "chromosome" and "location". The assembly used for mapping in our project is the "GRCH37 primary assembly". It is also downloaded automatically. The rest of the columns in each file are methylation levels(required) and other biological data (optional) you wish to incorporate to enhance the model. These files in the raw folder are the initial inputs for pipeline,if you wish to use your own data, it must be configured as such before running the pipeline. 
 
-### 4.2 Generate sample
+### 4.2 Generate Sample
 Use script "generate_samples.py" to generate samples for training and testing.   
 The model can not directly read and impute a methylation array file. Instead, each methylation array is divided into windows, each window is 1kb (1000 base pairs) in length, and each training testing sample is generated from a window. Each sample contains at least 5 channels. the first 4 is the sequence one-hot encoding, the 5th is the methylation data. If a base pair location is not a CpG location, the methylation data value for it is "-1". If a CpG's methylation data is missing or waiting for imputaion, its value is also "-1". Other biological data can be added as extra channels.   
+
+Check out example raw files in the folder "raw" to form your own datasets for training and testing sample generation.   
+For each raw file in the "raw" folder, the first 3 columns are chr, loc, and methylation.   
+The rest of the columns are treated as additional channels and will be added to each sample during generation.   
 
 '-d' or '--folder': specify raw data folder   
 '-i' or '--index' : which column in a raw file is the methylation array   
@@ -75,7 +79,10 @@ The model can not directly read and impute a methylation array file. Instead, ea
 '-n' or '--nsample': number of samples to generate per chromosome
 '-p' or '--output': samples output folder, default is "out"
 
-### 4.3 Training script
+Use script "generate_samples_concat.py" to generate samples from long-range interacting windows such as Hi-C interactions or computed correlation.   
+Check out the example long range file in the folder "data" to form your own long-range interacting windows for sample generation and concatenation.   
+
+### 4.3 Training Script
 Use diffusion.py to train and test a DDPM model using the generated samples  
 '-t' or '--train_folder' : the folder containing the training samples   
 '-f' or '--model_folder' : the model folder, will be created if it does not exist      
