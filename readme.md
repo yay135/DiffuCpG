@@ -12,7 +12,19 @@ In this repository, we deposit the code used to build the diffusion models along
 Install Docker using the following link:  
 https://docs.docker.com/engine/install/  
 Recommended system specs: Debian 12 bookworm with 16GB RAM or more.  
-Make sure you have the latest Nvidia GPU driver installed and docker can access your Nvidia GPU.   
+Make sure you have the latest Nvidia GPU driver installed and docker can access your Nvidia GPU. 
+### NEW DOCKRER IMAGE with Tissue Specific Models Available!
+``docker pull yay135/diffucpg_tss``  
+Use our example to generate input samples with Hi-C matrix and CIS (Confidence Interval Cross Sample) data.  
+``docker run -it yay135/diffucpg_tss``   
+then  
+``python generate_train_test_samples.py``  
+
+Run the Tissue specific models  
+``docker run -it yay135/diffucpg_tss``  
+then  
+``python batch_run.py``  
+
 ### Run the Models  
 ``docker pull yay135/diffucpg``   
 If you do not have a GPU enabled system, pull a CPU-only image   
