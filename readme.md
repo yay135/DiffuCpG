@@ -20,7 +20,7 @@ Use our example to generate input samples with Hi-C matrix and CIS (Confidence I
 then  
 ``python generate_train_test_samples.py``  
 
-Run the Tissue specific models  
+The Tissue specific models (pytorch) are for CD34+ cells, GBM and BRCA, they are stored in folders named "model*" in the image. Run the Tissue specific models  
 ``docker run -it yay135/diffucpg_tss``  
 then  
 ``python batch_run.py``  
