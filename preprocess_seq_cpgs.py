@@ -7,7 +7,7 @@ import os
 if not os.path.exists("data"):
     os.mkdir("data")
 
-url = "https://ftp.ensembl.org/pub/grch37/current/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz"
+url = "https://ftp.ensembl.org/pub/grch37/release-113/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz"
 local_file_path = f"data/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz"
     
 if not os.path.exists("data/Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz"):
