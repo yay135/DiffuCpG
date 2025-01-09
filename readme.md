@@ -13,14 +13,14 @@ Install Docker using the following link:
 https://docs.docker.com/engine/install/  
 Recommended system specs: Debian 12 bookworm with 16GB RAM or more.  
 Make sure you have the latest Nvidia GPU driver installed and docker can access your Nvidia GPU. 
-### NEW DOCKRER IMAGE with Tissue Specific Models Available!
+### NEW DOCKRER IMAGE with Tissue-specific Models Available!
 ``docker pull yay135/diffucpg_tss``  
 Use our example to generate input samples with Hi-C matrix and CIS (Confidence Interval Cross Sample) data.  
 ``docker run -it yay135/diffucpg_tss``   
 then  
 ``python generate_train_test_samples.py``  
 
-The Tissue specific models (pytorch) are for CD34+ cells, GBM and BRCA, they are stored in folders named "model*" in the image. Run the Tissue specific models  
+The tissue-specific models (pytorch) are for CD34+ cells, GBM and BRCA, they are stored in folders named "model*" in the image. Run the Tissue specific models  
 ``docker run -it yay135/diffucpg_tss``  
 then  
 ``python batch_run.py``  
@@ -51,7 +51,7 @@ use cuda device 1, min number of non-missing methyl values in a window is 5, ove
 Example datasets are available for download using "gdown.sh". The example datasets only contain WGBS methylation data. The model is the DDPM diffusion model, the repository contains a complete implementation for 1-dimensional input. Please refer to https://arxiv.org/abs/2006.11239  and https://huggingface.co/blog/annotated-diffusion for more details.   
 ## 3. How to use this repo
 ### 3.1 System Requirements
-The number of steps in the diffusion process is set to 2000. Imputing a sample requires 2000 steps. Gpu acceleration is prefered. 16GB of RAM is required. The code is fully tested and operational on the following platform:   
+The number of steps in the diffusion process is set to 2000. Imputing a sample requires 2000 steps. Gpu acceleration is preferred. 16GB of RAM is required. The code is fully tested and operational on the following platform:   
 
 Distributor ID: Debian   
 Description:    Debian GNU/Linux 12 (bookworm)   
