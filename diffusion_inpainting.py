@@ -79,7 +79,7 @@ if __name__ == '__main__' :
         assert(win_size == batch.shape[2])
         mask = mask_gen_missing(batch)
         imp_mask = torch.logical_not(mask)
-        impainted = inpainting(model, batch, imp_mask)
+        impainted = impainting(model, batch, imp_mask)
 
         for i, idx in enumerate(fid):
             fname = vali_samples[idx]

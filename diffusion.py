@@ -519,7 +519,7 @@ def p_sample(model, x, t, t_index):
 
 
 @torch.no_grad()
-def inpainting(model, x_p,  imp_mask):
+def impainting(model, x_p,  imp_mask):
     device = next(model.parameters()).device
     x_p = x_p.clone().to(device)
     imp_mask = imp_mask.clone().to(device)
